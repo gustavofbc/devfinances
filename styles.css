@@ -9,9 +9,26 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 93.75%; /*equivale a 15px*/
+}
+
 body {
   background: #f0f2f5;
   font-family: "Poppins", sans-serif;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  border: solid 1px red;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 .container {
@@ -26,6 +43,22 @@ h2 {
   color: var(--dark-blue);
 
   font-weight: normal;
+}
+
+/* ============= Links & buttons ============= */
+
+a {
+  color: #49aa26;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #3dd705;
+}
+
+.button.new {
+  display: inline-block;
+  margin-bottom: 0.8rem;
 }
 
 /* ============= Header ============= */
@@ -64,6 +97,9 @@ header {
 .card h3 {
   font-weight: normal;
   font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .card p {
@@ -81,14 +117,21 @@ header {
 /* ============= table ============= */
 
 #data-table {
+  display: block; /*encaixa o item "table" na tela*/
   width: 100%;
   border-spacing: 0 0.5rem;
   color: #969cb3;
+  overflow-x: auto; /* Habilita o scroll no eixo horizontal*/
 }
 
 table thead tr th:first-child,
 table tbody tr td:first-child {
   border-radius: 0.25rem 0 0 0.25rem;
+}
+
+table thead tr th:last-child,
+table tbody tr td:last-child {
+  border-radius: 0 0.25rem 0.25rem 0;
 }
 
 table th {
@@ -121,10 +164,24 @@ td.income {
 td.expense {
   color: #e92929;
 }
+
 /* ============= Footer ============= */
 footer {
   text-align: center;
   padding: 4rem 0rem 2rem;
   color: var(--dark-blue);
   opacity: 0.6;
+}
+
+/* ============= Responsive ============= */
+@media (min-width: 800px) {
+  html {
+    font-size: 87.5%; /*equivale a 14px*/
+  }
+
+  #balance {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
 }
