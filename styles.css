@@ -226,6 +226,7 @@ td.expense {
   /*regra de CSS para mostra a caixa*/
   opacity: 1;
   visibility: visible;
+  z-index: 999;
 }
 
 .modal {
@@ -233,6 +234,8 @@ td.expense {
   padding: 2.4rem;
   /* width: 90%;
   max-width: 500px; */
+  position: relative;
+  z-index: 2;
 }
 
 /* ============= Form ============= */
