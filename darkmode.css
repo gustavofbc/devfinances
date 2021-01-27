@@ -1,22 +1,45 @@
+:root {
+  --black: #2a2530;
+  --black-dark: #1f1b24;
+  --white: #fff;
+  --dark: #0e0e0e;
+}
+
 .body-dark {
-  background-color: #2a2530;
+  background-color: var(--black);
   transition: 0.2s;
+}
+
+.header-dark {
+  background: linear-gradient(180deg, #0d0312 0%, #185f3c 100%);
 }
 
 /* ============= Cards ============= */
 .card-dark {
-  background-color: #1f1b24;
-  color: #b3bfcb;
+  background-color: var(--black-dark);
+  color: var(--white);
   box-shadow: 2px 4px 4px 2px rgba(0, 0, 0, 0.5);
   transition: 0.2s;
 }
 
-.card.total.card-total-dark {
-  color: #1f1b24;
-}
-
 .button-mode-active {
   background-image: none;
-  background-image: url("assets/moon1.svg");
+  background-image: url("assets/moon.svg");
   background-repeat: no-repeat;
+}
+
+/* ============= Table ============= */
+.th-dark {
+  background: var(--dark);
+}
+
+.td-dark {
+  background: var(--dark);
+  color: var(--white);
+}
+
+/* ============= Footer ============= */
+.text-footer-dark {
+  color: var(--white);
+  transition: 0.2s;
 }
