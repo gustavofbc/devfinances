@@ -321,6 +321,15 @@ footer p .text-footer {
   transition: 0.2s;
 }
 
+.github {
+  width: 35px;
+  height: 35px;
+  margin-top: 0.8rem;
+  opacity: 0.7;
+}
+.github:hover {
+  opacity: 1;
+}
 /* ============= Responsive ============= */
 @media (min-width: 800px) {
   html {
