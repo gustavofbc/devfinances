@@ -71,12 +71,14 @@ button {
 
   padding: 0;
   border-radius: 0.25rem;
+  opacity: 0.8;
 
   cursor: pointer;
+  transition: 0.2s;
 }
 
 button:hover {
-  background: var(--light-green);
+  opacity: 1;
 }
 
 .button.new {
@@ -96,6 +98,7 @@ button:hover {
   justify-content: center;
 
   opacity: 0.6;
+  transition: 0.2s;
 }
 
 .button.cancel:hover {
@@ -276,6 +279,7 @@ td.expense {
 
 #form h2 {
   margin-top: 0;
+  padding-bottom: 0.8rem;
 }
 
 input {

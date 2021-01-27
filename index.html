@@ -101,7 +101,7 @@
     <div class="modal-overlay">
         <div class="modal">
                 <div id="form">
-                    <h2>Nova Transação</h2>
+                    <h2 class="title-modal">Nova Transação</h2>
                     <form action="">
                         <div class="input-group">
                             <label
@@ -189,17 +189,25 @@
                 th.classList.toggle('th-dark')
             }); 
 
-            let tds = document.querySelectorAll('td');
+            const tds = document.querySelectorAll('td');
             tds.forEach(td => {
+                //adicionar cor aos itens da coluna "description" na tabela
+                if(td.classList.contains('description')){
+                    td.classList.toggle('td-description-dark')
+                }
+
                 td.classList.toggle('td-dark')
             });
 
-            let dates = document.querySelectorAll('.date');
-            dates.forEach(date => {
-                date.classList.toggle('td-date-dark')
-            });
             //Footer =======================================
             document.querySelector('.text-footer').classList.toggle('text-footer-dark')
+        
+            //Modal =======================================
+            document.querySelector('.modal').classList.toggle('modal-dark');
+
+            document.querySelector('.title-modal').classList.toggle('title-modal-dark')
+            
+            document.querySelector('small').classList.toggle('inform')
         }
 
     </script>

@@ -38,6 +38,23 @@
   color: var(--white);
 }
 
+.td-description-dark {
+  color: #e6e9e5 !important;
+}
+
+/* ============= Modal ============= */
+.modal-dark {
+  background: var(--black-dark);
+}
+
+.title-modal-dark {
+  color: var(--white);
+}
+
+.inform {
+  color: var(--white);
+}
+
 /* ============= Footer ============= */
 .text-footer-dark {
   color: var(--white);
