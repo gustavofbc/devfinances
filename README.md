@@ -1,8 +1,9 @@
 
 <h1 align="center">
     <img alt="Todos" title="Snake-game" src="https://github.com/gustavofbc/devfinances/blob/main/assets/logo.svg" />
-    <p align="center">Projeto desenvolvido durante a Maratona Discover promovido pela Rockeseat :rocket:</p>
 </h1>
+
+<p align="center">Projeto desenvolvido durante a Maratona Discover promovido pela Rockeseat :rocket:</p>
 
 <br>
 
