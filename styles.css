@@ -1,9 +1,10 @@
 /* ============= Global ============= */
 :root {
   --dark-blue: #363f5f;
-  --green: #49aa26;
-  --light-green: #3dd705;
+  --green: #185f3c;
+  --light-green: #2baa6a;
   --red: #e92929;
+  --white: #fff;
 }
 
 * {
@@ -19,6 +20,7 @@ html {
 body {
   background: #f0f2f5;
   font-family: "Poppins", sans-serif;
+  transition: 0.2s;
 }
 
 .sr-only {
@@ -59,12 +61,19 @@ a:hover {
   color: var(--light-green);
 }
 
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
 button {
   width: 100%;
   height: 50px;
 
   border: none;
-  color: #fff;
+  color: var(--white);
   background: var(--green);
 
   padding: 0;
@@ -99,15 +108,37 @@ button:hover {
 .button.cancel:hover {
   opacity: 1;
 }
+
+.button-add {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+.button-add:hover {
+  opacity: 0.9;
+}
+
+.button-mode {
+  width: 60px;
+  height: 60px;
+  background-image: url("assets/sun1.svg");
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: 0.2s;
+  margin-left: 1.6rem;
+}
 /* ============= Header ============= */
 header {
   background: #2d4a22;
-  padding: 2rem 0 10rem;
+  padding: 4rem 0 12rem;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #logo {
-  color: #fff;
+  color: var(--white);
   font-weight: 100;
 }
 
@@ -118,18 +149,20 @@ header {
 }
 
 #balance h2 {
-  color: #fff;
+  color: var(--white);
   margin-top: 0;
 }
 
 /* ============= Cards ============= */
 .card {
-  background: #fff;
+  background: var(--white);
   padding: 1.5rem 2rem;
   border-radius: 0.25rem;
   margin-bottom: 2rem;
 
   color: var(--dark-blue);
+  box-shadow: 2px 4px 4px 2px rgba(0, 0, 0, 0.25);
+  transition: 0.2s;
 }
 
 .card h3 {
@@ -149,7 +182,7 @@ header {
 
 .card.total {
   background: var(--green);
-  color: #fff;
+  color: var(--white);
 }
 
 /* ============= table ============= */
@@ -175,7 +208,8 @@ table tbody tr td:last-child {
 }
 
 table th {
-  background: #fff;
+  background: #2d4a22;
+  color: var(--white);
   font-weight: normal;
   padding: 1rem 2rem;
   text-align: left;
@@ -189,7 +223,7 @@ table tbody tr:hover {
 }
 
 table td {
-  background: #fff;
+  background: var(--white);
   padding: 1rem 2rem;
 }
 

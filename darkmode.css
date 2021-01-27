@@ -1,0 +1,22 @@
+.body-dark {
+  background-color: #2a2530;
+  transition: 0.2s;
+}
+
+/* ============= Cards ============= */
+.card-dark {
+  background-color: #1f1b24;
+  color: #b3bfcb;
+  box-shadow: 2px 4px 4px 2px rgba(0, 0, 0, 0.5);
+  transition: 0.2s;
+}
+
+.card.total.card-total-dark {
+  color: #1f1b24;
+}
+
+.button-mode-active {
+  background-image: none;
+  background-image: url("assets/moon1.svg");
+  background-repeat: no-repeat;
+}

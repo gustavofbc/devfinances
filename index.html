@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dev.finance$</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="darkmode.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
+    
     <header>
         <img src="assets/logo.svg" alt="Logo Dev finance">
     </header>
@@ -36,7 +38,7 @@
             <div class="card total">
                 <h3>
                     <span>Total</span>
-                    <img src="assets/total.svg" alt="Image de total">
+                    <img src="assets/total1.svg" alt="Image de total">
                 </h3>
                 <p>R$ 3.000,00</p>
             </div>
@@ -46,13 +48,18 @@
         <section id="transaction">
             <h2 class="sr-only">Transações</h2>
             
-            <a 
-                class="button new" 
-                href="#"
-                onclick="Modal.open()"
-            >
-                + Nova Transação
-            </a>
+            <div class="buttons">
+                <a 
+                    class="button new" 
+                    href="#"
+                    onclick="Modal.open()"
+                    >
+                    <img class="button-add" src="assets/button-add.svg" alt="Nova Transação">
+                </a>
+            
+                <div class="button-mode" onclick="darkmode()"></div>
+            
+            </div>
 
             <table id="data-table">
                 <thead>
@@ -165,6 +172,21 @@
                 document.querySelector('.modal-overlay').classList.remove('active')
             }
         }
+
+
+        function darkmode(){
+            document.querySelector('body').classList.toggle('body-dark');
+            
+            document.querySelector('.button-mode').classList.toggle('button-mode-active')
+                
+            document.querySelector('.total').classList.toggle('card-total-dark');
+
+            let cards = document.querySelectorAll('.card')
+            cards.forEach(card => {
+                card.classList.toggle('card-dark')
+            });
+        }
+
     </script>
 </body>
 </html>
