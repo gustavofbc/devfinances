@@ -48,7 +48,7 @@ const Transaction = {
             }
         })
 
-        return Utils.formatCurrency(income);
+        return income;
     },
     expenses(){
         let expense = 0;
@@ -58,11 +58,10 @@ const Transaction = {
             }
         })
 
-        return Utils.formatCurrency(expense);
+        return expense;
     },
     total(){
-        //entradas - saídas
-        return "Discover"
+        return Transaction.incomes() + Transaction.expenses();
     }
 }
 
@@ -94,9 +93,9 @@ const DOM = {
     },
 
     updateBalance(){
-        document.getElementById('income-display').innerHTML = Transaction.incomes()
-        document.getElementById('expense-display').innerHTML = Transaction.expenses()
-        document.getElementById('total-display').innerHTML = Transaction.total()
+        document.getElementById('income-display').innerHTML = Utils.formatCurrency(Transaction.incomes())
+        document.getElementById('expense-display').innerHTML = Utils.formatCurrency(Transaction.expenses())
+        document.getElementById('total-display').innerHTML = Utils.formatCurrency(Transaction.total())
     }
 }
 
