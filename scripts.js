@@ -48,11 +48,17 @@ const Transaction = {
             }
         })
 
-        return Utils.formatCurrency(income)
+        return Utils.formatCurrency(income);
     },
     expenses(){
-        //somar as saídas
-        return "aqui"
+        let expense = 0;
+        transactions.forEach(transaction => {
+            if(transaction.amount < 0){
+                expense += transaction.amount;
+            }
+        })
+
+        return Utils.formatCurrency(expense);
     },
     total(){
         //entradas - saídas
