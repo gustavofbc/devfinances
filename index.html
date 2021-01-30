@@ -67,30 +67,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="description">Luz</td>
-                        <td class="expense">- R$ 500,00</td>
-                        <td class="date">23/01/2021</td>
-                        <td>
-                            <img src="assets/minus.svg" alt="Remover transação">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="description">Criação de Website</td>
-                        <td class="income">- R$ 5.000,00</td>
-                        <td class="date">23/01/2021</td>
-                        <td>
-                            <img src="assets/minus.svg" alt="Remover transação">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="description">Internet</td>
-                        <td class="expense">- R$ 200,00</td>
-                        <td class="date">23/01/2021</td>
-                        <td>
-                            <img src="assets/minus.svg" alt="Remover transação">
-                        </td>
-                    </tr>
                 </tbody>
             </table>
 
@@ -161,61 +137,7 @@
         </a>
     </footer>
 
-    <script>
-        const Modal = {
-            open(){
-                //abrir modal
-                //adicionar a class active ao modal
-                document.querySelector('.modal-overlay').classList.add('active')
-            },
-            close(){
-                //fechar modal
-                //remover a class active do modal
-                document.querySelector('.modal-overlay').classList.remove('active')
-            }
-        }
-
-
-        function darkmode(){
-            document.querySelector('body').classList.toggle('body-dark');
-
-            document.querySelector('header').classList.toggle('header-dark');
-            
-            document.querySelector('.button-mode').classList.toggle('button-mode-active')    
-            
-            // Cards ====================================== 
-            let cards = document.querySelectorAll('.card')
-            cards.forEach(card => {
-                card.classList.toggle('card-dark')
-            });
-
-            // Table ======================================
-            let ths = document.querySelectorAll('th');
-            ths.forEach(th => {
-                th.classList.toggle('th-dark')
-            }); 
-
-            const tds = document.querySelectorAll('td');
-            tds.forEach(td => {
-                //adicionar cor aos itens da coluna "description" na tabela
-                if(td.classList.contains('description')){
-                    td.classList.toggle('td-description-dark')
-                }
-
-                td.classList.toggle('td-dark')
-            });
-
-            //Footer =======================================
-            document.querySelector('.text-footer').classList.toggle('text-footer-dark')
-        
-            //Modal =======================================
-            document.querySelector('.modal').classList.toggle('modal-dark');
-
-            document.querySelector('.title-modal').classList.toggle('title-modal-dark')
-            
-            document.querySelector('small').classList.toggle('inform')
-        }
-
-    </script>
+    <script src="scripts.js"></script>
+    <script src="./darkmode.js"></script>
 </body>
 </html>

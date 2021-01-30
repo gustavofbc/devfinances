@@ -17,6 +17,13 @@ html {
   font-size: 93.75%; /*equivale a 15px*/
 }
 
+input,
+select,
+textarea,
+::placeholder {
+  color: var(--green);
+}
+
 body {
   background: #f0f2f5;
   font-family: "Poppins", sans-serif;
@@ -254,6 +261,7 @@ td.expense {
   /*regra de CSS para esconder a caixa*/
   opacity: 0;
   visibility: hidden;
+  transition: 0.4s;
 }
 
 .modal-overlay.active {
@@ -270,6 +278,7 @@ td.expense {
   max-width: 500px; */
   position: relative;
   z-index: 2;
+  border-radius: 0.6rem;
 }
 
 /* ============= Form ============= */
