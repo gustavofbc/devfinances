@@ -40,9 +40,17 @@ const transactions = [
 ]
 
 const Transaction = {
+    //adicionando o "transactions" como atalho no all
+    all: transactions,
+    add(transaction){
+        Transaction.all.push(transaction);
+
+        console.log(Transaction.all)
+    },
+
     incomes() {
         let income = 0;
-        transactions.forEach(transaction => {
+        Transaction.all.forEach(transaction => {
             if(transaction.amount > 0){
                 income += transaction.amount;
             }
@@ -50,9 +58,10 @@ const Transaction = {
 
         return income;
     },
+
     expenses(){
         let expense = 0;
-        transactions.forEach(transaction => {
+        Transaction.all.forEach(transaction => {
             if(transaction.amount < 0){
                 expense += transaction.amount;
             }
@@ -60,6 +69,7 @@ const Transaction = {
 
         return expense;
     },
+
     total(){
         return Transaction.incomes() + Transaction.expenses();
     }
@@ -120,4 +130,11 @@ transactions.forEach(function(transaction){
     DOM.addTransaction(transaction)
 })
 
-DOM.updateBalance()
+DOM.updateBalance();
+
+Transaction.add({
+    id: 39,
+    description: 'ALÔ',
+    amount: 200,
+    date: '23/01/2021'
+})
