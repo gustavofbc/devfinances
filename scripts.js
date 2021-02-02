@@ -126,15 +126,24 @@ const Utils = {
     }
 }
 
-transactions.forEach(function(transaction){
-    DOM.addTransaction(transaction)
-})
+const App = {
+    init() {
 
-DOM.updateBalance();
+        Transaction.all.forEach((transaction) =>{
+            DOM.addTransaction(transaction)
+        })
+        
+        DOM.updateBalance();
+        
+        Transaction.add({
+            id: 39,
+            description: 'ALÔ',
+            amount: 200,
+            date: '23/01/2021'
+        })
+    },
+    reload() {}
+}
 
-Transaction.add({
-    id: 39,
-    description: 'ALÔ',
-    amount: 200,
-    date: '23/01/2021'
-})
+//Inicializando a aplicação
+App.init();
