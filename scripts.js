@@ -45,7 +45,7 @@ const Transaction = {
     add(transaction){
         Transaction.all.push(transaction);
 
-        console.log(Transaction.all)
+        App.reload();
     },
 
     incomes() {
@@ -102,10 +102,14 @@ const DOM = {
         return html;
     },
 
-    updateBalance(){
+    updateBalance() {
         document.getElementById('income-display').innerHTML = Utils.formatCurrency(Transaction.incomes())
         document.getElementById('expense-display').innerHTML = Utils.formatCurrency(Transaction.expenses())
         document.getElementById('total-display').innerHTML = Utils.formatCurrency(Transaction.total())
+    },
+
+    clearTransactions() {
+        DOM.transactionsContainer.innerHTML = ""
     }
 }
 
@@ -134,16 +138,19 @@ const App = {
         })
         
         DOM.updateBalance();
-        
-        Transaction.add({
-            id: 39,
-            description: 'ALÔ',
-            amount: 200,
-            date: '23/01/2021'
-        })
+
     },
-    reload() {}
+    reload() {
+        App.init()
+    }
 }
 
 //Inicializando a aplicação
 App.init();
+        
+Transaction.add({
+    id: 39,
+    description: 'ALÔ',
+    amount: 200,
+    date: '23/01/2021'
+})
