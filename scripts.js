@@ -141,7 +141,10 @@ const App = {
 
     },
     reload() {
-        App.init()
+        //limpa os registros anteriores
+        DOM.clearTransactions();
+        //adiciona os novos
+        App.init();
     }
 }
 
