@@ -115,6 +115,11 @@ const DOM = {
 }
 
 const Utils = {
+    formatAmount(value){
+        value = Number(value) * 100;
+        return value
+    },
+
     formatCurrency(value){
         const signal = Number(value) < 0 ? "-" : ""
         
@@ -146,28 +151,40 @@ const Form = {
         }
     },
 
-    formateDate() {
-        console.log('Formatar os dados')
-    },
+    //validação dos dados
     validateField() {
-        const {description, amount, date} = Form.getValues()
+        const {description, amount, date} = Form.getValues();
         
         if(description.trim() === "" ||
            amount.trim() === "" ||
-           date.trom() )
+           date.trim() )
             {
                 throw new Error('Por favor, preencha todos os campos!')
         }
         
     },
 
+    //formatar os dados
+    formateValues() {
+        let {description, amount, date} = Form.getValues();
+        
+        amount = Utils.formatAmount(amount);
+        date = Utils.formateDate(date);
+    },
+
     submit(event) {
         event.preventDefault();
 
-        //validar as campos
-        Form.validateField();
-        //formatar os dados
-        Form.formateDate();
+        try{
+            //validar as campos
+            // Form.validateField();
+            //formatar os dados
+            Form.formateValues();
+        } catch (error) {
+            //retorna a mensagem de erro do método validate
+            alert(error.message)
+        }
+
     }
 }
 
