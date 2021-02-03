@@ -12,33 +12,31 @@ const Modal = {
     }
 }
 
-const transactions = [
-    {
-        description: 'Luz',
-        amount: -50000,
-        date: '23/01/2021'
-    },
-    {
-        description: 'Website',
-        amount: 500000,
-        date: '23/01/2021'
-    },
-    {
-        description: 'Internet',
-        amount: -20000,
-        date: '23/01/2021'
-    },
-    {
-        id: 4,
-        description: 'App',
-        amount: 100000,
-        date: '23/01/2021'
-    },
-]
-
 const Transaction = {
     //adicionando o "transactions" como atalho no all
-    all: transactions,
+    all: [
+        {
+            description: 'Luz',
+            amount: -50000,
+            date: '23/01/2021'
+        },
+        {
+            description: 'Website',
+            amount: 500000,
+            date: '23/01/2021'
+        },
+        {
+            description: 'Internet',
+            amount: -20000,
+            date: '23/01/2021'
+        },
+        {
+            id: 4,
+            description: 'App',
+            amount: 100000,
+            date: '23/01/2021'
+        },
+    ],
     add(transaction){
         Transaction.all.push(transaction);
 
@@ -133,6 +131,46 @@ const Utils = {
     }
 }
 
+const Form = {
+    //propriedades:
+    description: document.querySelector('input#description'),
+    amount: document.querySelector('input#amount'),
+    date: document.querySelector('input#date'),
+
+    //pegando apenas os valores
+    getValues() {
+        return {
+            description: Form.description.value,
+            amount: Form.amount.value,
+            date: Form.date.value,
+        }
+    },
+
+    formateDate() {
+        console.log('Formatar os dados')
+    },
+    validateField() {
+        const {description, amount, date} = Form.getValues()
+        
+        if(description.trim() === "" ||
+           amount.trim() === "" ||
+           date.trom() )
+            {
+                throw new Error('Por favor, preencha todos os campos!')
+        }
+        
+    },
+
+    submit(event) {
+        event.preventDefault();
+
+        //validar as campos
+        Form.validateField();
+        //formatar os dados
+        Form.formateDate();
+    }
+}
+
 const App = {
     init() {
 
@@ -153,5 +191,3 @@ const App = {
 
 //Inicializando a aplicação
 App.init();
-
-Transaction.remove(1)
