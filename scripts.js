@@ -120,7 +120,7 @@ const Utils = {
         return value
     },
 
-    formateDate(date){
+    formatDate(date){
         const splittedDate = date.split("-");
         return `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}`;
     },
@@ -162,7 +162,7 @@ const Form = {
         
         if(description.trim() === "" ||
            amount.trim() === "" ||
-           date.trim() )
+           date.trim() === "")
             {
                 throw new Error('Por favor, preencha todos os campos!')
         }
@@ -170,11 +170,23 @@ const Form = {
     },
 
     //formatar os dados
-    formateValues() {
+    formatValues() {
         let {description, amount, date} = Form.getValues();
         
         amount = Utils.formatAmount(amount);
-        date = Utils.formateDate(date);
+        date = Utils.formatDate(date);
+
+        return {
+            description: description,
+            amount: amount,
+            date: date,
+        }
+    },
+
+    clearFields() {
+        Form.description.value = "";
+        Form.description.amount = "";
+        Form.description.date = "";
     },
 
     submit(event) {
@@ -182,9 +194,16 @@ const Form = {
 
         try{
             //validar as campos
-            // Form.validateField();
+            Form.validateField();
             //formatar os dados
-            Form.formateValues();
+            const transaction = Form.formatValues();
+            //salvar a transação
+            Transaction.add(transaction);
+            //apagar os dados do formulário
+            Form.clearFields();
+            //fechar o modal
+            Modal.close();
+
         } catch (error) {
             //retorna a mensagem de erro do método validate
             alert(error.message)
