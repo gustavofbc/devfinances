@@ -12,31 +12,20 @@ const Modal = {
     }
 }
 
+const Storage = {
+    get() {
+        //transforma p/ array
+        return JSON.parse(localStorage.getItem("dev.finances:transactions")) || [];
+    },
+    set(transactions) {
+        //transformar o array p/ string
+        localStorage.setItem("dev.finances:transactions", JSON.stringify(transactions));
+    }
+}
+
 const Transaction = {
     //adicionando o "transactions" como atalho no all
-    all: [
-        {
-            description: 'Luz',
-            amount: -50000,
-            date: '23/01/2021'
-        },
-        {
-            description: 'Website',
-            amount: 500000,
-            date: '23/01/2021'
-        },
-        {
-            description: 'Internet',
-            amount: -20000,
-            date: '23/01/2021'
-        },
-        {
-            id: 4,
-            description: 'App',
-            amount: 100000,
-            date: '23/01/2021'
-        },
-    ],
+    all: Storage.get(),
     add(transaction){
         Transaction.all.push(transaction);
 
@@ -188,8 +177,8 @@ const Form = {
 
     clearFields() {
         Form.description.value = "";
-        Form.description.amount = "";
-        Form.description.date = "";
+        Form.amount.value = "";
+        Form.date.value = "";
     },
 
     submit(event) {
@@ -215,17 +204,6 @@ const Form = {
     }
 }
 
-const Storage = {
-    get() {
-        //transforma p/ array
-        return JSON.parse(localStorage.getItem("dev.finances:transaction")) || [];
-    },
-    set(transactions) {
-        //transformar o array p/ string
-        localStorage.setItem("dev.finances:transactions", JSON.stringify(transactions));
-    }
-}
-
 const App = {
     init() {
 
@@ -234,6 +212,8 @@ const App = {
         })
         
         DOM.updateBalance();
+        //atualizando o localStorage
+        Storage.set(Transaction.all)
 
     },
     reload() {
