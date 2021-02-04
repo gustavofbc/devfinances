@@ -1,15 +1,7 @@
 const Modal = {
-// REFATORAR -> criar a função toggle
-    open(){
-        //abrir modal
-        //adicionar a class active ao modal
-        document.querySelector('.modal-overlay').classList.add('active')
+    toggleModal(){
+        document.querySelector('.modal-overlay').classList.toggle('active')
     },
-    close(){
-        //fechar modal
-        //remover a class active do modal
-        document.querySelector('.modal-overlay').classList.remove('active')
-    }
 }
 
 const Storage = {
