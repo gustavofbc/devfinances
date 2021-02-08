@@ -186,7 +186,7 @@ const Form = {
             //apagar os dados do formulário
             Form.clearFields();
             //fechar o modal
-            Modal.close();
+            Modal.toggleModal();
 
         } catch (error) {
             //retorna a mensagem de erro do método validate
