@@ -1,9 +1,14 @@
 /* ============= Global ============= */
 :root {
-  --dark-blue: #363f5f;
-  --green: #185f3c;
+  --text-color: #363f5f;
+  --text-color-light: #fff;
+  --input-background-color: #fff;
+  --background-color: #f0f2f5;
   --light-green: #2baa6a;
-  --red: #e92929;
+  --background-black: #0d0312;
+  --background-green: #003628;
+  --positive: #003828;
+  --negative: #e92929;
   --white: #fff;
 }
 
@@ -17,15 +22,25 @@ html {
   font-size: 93.75%; /*equivale a 15px*/
 }
 
+input {
+  background-color: var(--input-background-color);
+}
+
 input,
 select,
 textarea,
 ::placeholder {
-  color: var(--green);
+  color: var(--positive);
+}
+
+/* regra para esconder o checkbox do darkmode */
+input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
 }
 
 body {
-  background: #f0f2f5;
+  background: var(--background-color);
   font-family: "Poppins", sans-serif;
   transition: 0.2s;
 }
@@ -52,7 +67,7 @@ body {
 h2 {
   margin-top: 3.2rem;
   margin-bottom: 0.8rem;
-  color: var(--dark-blue);
+  color: var(--text-color);
 
   font-weight: normal;
 }
@@ -60,7 +75,7 @@ h2 {
 /* ============= Links & buttons ============= */
 
 a {
-  color: var(--green);
+  color: var(--positive);
   text-decoration: none;
 }
 
@@ -73,8 +88,8 @@ button {
   height: 50px;
 
   border: none;
-  color: var(--white);
-  background: var(--green);
+  color: var(--text-color-light);
+  background: var(--positive);
 
   padding: 0;
   border-radius: 0.25rem;
@@ -94,8 +109,8 @@ button:hover {
 }
 
 .button.cancel {
-  color: var(--red);
-  border: 2px solid var(--red);
+  color: var(--negative);
+  border: 2px solid var(--negative);
   border-radius: 0.25rem;
 
   height: 50px;
@@ -135,7 +150,11 @@ button:hover {
 
 /* ============= Header ============= */
 header {
-  background: linear-gradient(180deg, #185f3c 0%, #0d0312 100%);
+  background: linear-gradient(
+    180deg,
+    var(--background-green) 0%,
+    var(--background-black) 100%
+  );
   padding: 4rem 0 12rem;
   text-align: center;
   display: flex;
@@ -167,8 +186,8 @@ header {
   border-radius: 0.25rem;
   margin-bottom: 2rem;
 
-  color: var(--dark-blue);
-  box-shadow: 2px 4px 4px 2px rgba(0, 0, 0, 0.25);
+  color: var(--text-color);
+  box-shadow: 6px 4px 4px 2px rgba(0, 0, 0, 0.25);
   transition: 0.2s;
 }
 
@@ -188,8 +207,8 @@ header {
 }
 
 .card.total {
-  background: var(--green);
-  color: var(--white);
+  background: var(--positive);
+  color: var(--text-color-light);
 }
 
 /* ============= table ============= */
@@ -235,7 +254,7 @@ table td {
 }
 
 td.description {
-  color: var(--dark-blue);
+  color: var(--text-color);
 }
 
 td.income {
@@ -243,7 +262,7 @@ td.income {
 }
 
 td.expense {
-  color: #e92929;
+  color: var(--negative);
 }
 
 /* ============= Modal ============= */
@@ -272,7 +291,7 @@ td.expense {
 }
 
 .modal {
-  background: #f0f2f5;
+  background: var(--background-color);
   padding: 2.4rem;
   /* width: 90%;
   max-width: 500px; */
@@ -322,7 +341,7 @@ input {
 footer {
   text-align: center;
   padding: 4rem 0rem 2rem;
-  color: var(--dark-blue);
+  color: var(--text-color);
   opacity: 0.6;
 }
 

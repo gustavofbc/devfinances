@@ -5,17 +5,35 @@
   --dark: #0e0e0e;
 }
 
-.body-dark {
+html[dark] {
+  --text-color: #f0f2f5;
+  --text-color-light: #fff;
+  --input-background-color: #f0f2f5;
+  --background-color: #0f0516;
+  --light-green: #2baa6a;
+  --background-black: #003628;
+  --background-green: #0d0312;
+  --positive: #003828;
+  --negative: #e92929;
+  --white: #0d0312;
+}
+
+.button-mode-active {
+  background-image: none;
+  background-image: url("assets/moon.svg");
+}
+
+/* .body-dark {
   background-color: var(--black);
   transition: 0.2s;
 }
 
 .header-dark {
   background: linear-gradient(180deg, #0d0312 0%, #185f3c 100%);
-}
+} */
 
 /* ============= Cards ============= */
-.card-dark {
+/* .card-dark {
   background-color: var(--black-dark);
   color: var(--white);
   box-shadow: 2px 4px 4px 2px rgba(0, 0, 0, 0.5);
@@ -27,9 +45,9 @@
   background-image: url("assets/moon.svg");
   background-repeat: no-repeat;
 }
-
+ */
 /* ============= Table ============= */
-.th-dark {
+/* .th-dark {
   background: var(--dark);
 }
 
@@ -40,10 +58,10 @@
 
 .td-description-dark {
   color: #e6e9e5 !important;
-}
+} */
 
 /* ============= Modal ============= */
-.modal-dark {
+/* .modal-dark {
   background: var(--black-dark);
 }
 
@@ -53,10 +71,10 @@
 
 .inform {
   color: var(--white);
-}
+} */
 
 /* ============= Footer ============= */
-.text-footer-dark {
-  color: var(--white);
+/* .text-footer-dark { */
+/* color: var(--white);
   transition: 0.2s;
-}
+} */
