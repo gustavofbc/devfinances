@@ -144,8 +144,8 @@ button:hover {
   cursor: pointer;
   transition: 0.2s;
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 2rem;
+  right: 2rem;
 }
 
 /* ============= Header ============= */
@@ -324,6 +324,7 @@ input {
 
 .input-group small {
   opacity: 0.4;
+  color: var(--text-color);
 }
 
 .input-group.actions {
